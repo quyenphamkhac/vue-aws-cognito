@@ -1,11 +1,12 @@
 <template>
   <a-layout id="authorize">
-    <amplify-authenticator v-bind:authConfig="authConfig"></amplify-authenticator>
+    <amplify-authenticator v-bind:authConfig="authConfig">
+    </amplify-authenticator>
   </a-layout>
 </template>
 
 <script>
-import { components } from 'aws-amplify-vue';
+import { components } from "aws-amplify-vue";
 export default {
   name: "auth",
   components: {
@@ -20,9 +21,6 @@ export default {
         }
       }
     };
-  },
-  created() {
-    console.log(components)
   }
 };
 </script>

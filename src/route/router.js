@@ -48,7 +48,7 @@ export default new Router({
     },
     {
       path: "/",
-      redirect: "/authorize"
+      redirect: "/auth"
     }
   ]
 });
