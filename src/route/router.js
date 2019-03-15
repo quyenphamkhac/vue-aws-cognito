@@ -1,55 +1,54 @@
-import Vue from 'vue'
-import Router from 'vue-router';
+import Vue from "vue";
+import Router from "vue-router";
 
-import Layout from '../components/layout/Layout.vue';
-import Home from '../components/Home.vue';
-import Report from '../components/Report.vue';
-import Profile from '../components/Profile.vue';
-import Dashboard from '../components/Dashboard.vue';
+import Layout from "../components/layout/Layout.vue";
+import Home from "../components/Home.vue";
+import Report from "../components/Report.vue";
+import Profile from "../components/Profile.vue";
+import Dashboard from "../components/Dashboard.vue";
 import Auth from "../views/Auth.vue";
 
-
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
-  mode: 'history',
+  mode: "history",
   // base: process.env.BASE_URL,
   routes: [
     {
-      path: '/authorize',
-      name: 'authorize',
+      path: "/auth",
+      name: "auth",
       component: Auth
     },
     {
-      path: '/app',
-      name: 'app',
+      path: "/app",
+      name: "app",
       component: Layout,
       children: [
         {
-          path: 'admin',
-          name: 'home',
+          path: "admin",
+          name: "home",
           component: Home
         },
         {
-          path: 'dashboard',
-          name: 'dashboard',
+          path: "dashboard",
+          name: "dashboard",
           component: Dashboard
         },
         {
-          path: 'profile',
-          name: 'profile',
+          path: "profile",
+          name: "profile",
           component: Profile
         },
         {
-          path: 'report',
-          name: 'report',
+          path: "report",
+          name: "report",
           component: Report
         }
       ]
     },
     {
       path: "/",
-      redirect: "/authorize",
+      redirect: "/authorize"
     }
   ]
 });
