@@ -7,6 +7,7 @@ import Report from "../components/Report.vue";
 import Profile from "../components/Profile.vue";
 import Dashboard from "../components/Dashboard.vue";
 import Auth from "../views/Auth.vue";
+import Page404 from "../views/404.vue";
 
 Vue.use(Router);
 
@@ -49,6 +50,10 @@ export default new Router({
     {
       path: "/",
       redirect: "/auth"
+    },
+    {
+      path: "*",
+      component: Page404
     }
   ]
 });
